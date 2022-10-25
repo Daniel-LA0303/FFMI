@@ -1,4 +1,24 @@
 import React, {useState, useEffect} from 'react';
+import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
+
+
+const animationsXp = {
+    hidden: {
+      opacity: 0,
+      x: "100px"
+    },
+    show: {
+      opacity: 1,
+      x: "0px",
+      transition: {
+        delay: 1,
+        duration: 1,
+        ease: "easeInOut",
+    }
+    }
+  }
+  
 
 const Calculation = ({
     metricImperial,
@@ -87,7 +107,9 @@ const Calculation = ({
   return (
     <>
 
-    <div className=' w-full mx-10 my-5 p-3'>
+    <div 
+        className=' w-full mx-10 my-5 p-3'
+    >
         <div className={`flex justify-center items-center ${!modal ? 'relative' : 'hidden' }`}>
             <p className='mx-5'>Metric</p>
             <input 

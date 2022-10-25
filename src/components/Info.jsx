@@ -3,9 +3,7 @@ import { CircularProgressbar, buildStyles} from 'react-circular-progressbar';
 import "react-circular-progressbar/dist/styles.css";
 
 const Info = ({
-    result, 
-    metricImperial, 
-    setMetricImperial
+    result
 }) => {
 
     const { fatFreeMass, bodyFat, ffmi, NormalizedFFmi} =result;
@@ -19,7 +17,6 @@ const Info = ({
                 textColor: 'white',
                 strokeLinecap: 'butt',
                 pathTransitionDuration: 1
-                // weight: 'auto'
             })}
             minValue={0}
             maxValue={80}
@@ -31,22 +28,18 @@ const Info = ({
         <div className=' flex justify-between mb-1'>
             <p className=' text-lg sm:text-base lg:text-xl '>Fat Free Mass</p>
             <p className=' text-lg sm:text-base lg:text-2xl'>{fatFreeMass} kg</p>
-            {/* <p className=' text-lg sm:text-base lg:text-2xl'>{!metricImperial ? fatFreeMass.toFixed(2) : fatFreeMass1.toFixed(2)} kg</p>  */}
         </div>
         <div className=' flex justify-between mb-1'>
             <p className=' text-lg sm:text-base lg:text-xl '>Body Fat</p>
             <p className=' text-lg sm:text-base lg:text-2xl'>{bodyFat} %</p>
-            {/* <p className=' text-lg sm:text-base lg:text-2xl'>{!metricImperial ? bodyFat.toFixed(2) : bodyFatT1.toFixed(2)} %</p> */}
         </div>
         <div className=' flex justify-between mb-1'>
             <p className=' text-lg sm:text-base lg:text-xl '>FFMI</p>
             <p className=' text-lg sm:text-base lg:text-2xl'>{ffmi}</p>
-            {/* <p className=' text-lg sm:text-base lg:text-2xl'>{!metricImperial ? ffmi.toFixed(2) : ffmi1.toFixed(2)}</p> */}
         </div>
         <div className=' flex justify-between mb-1'>
             <p className=' text-lg sm:text-base lg:text-xl '>Normalized FFMI</p>
             <p className=' text-lg sm:text-base lg:text-2xl'>{NormalizedFFmi}</p>
-            {/* <p className=' text-lg sm:text-base lg:text-2xl'>{!metricImperial ? ffmiAjusted.toFixed(2) : ffmiAjusted1.toFixed(2)}</p> */}
         </div>
         
     </div>

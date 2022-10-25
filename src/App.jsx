@@ -3,7 +3,40 @@ import Calculation from './components/Calculation';
 import Info from './components/Info';
 import Modal from './components/modal/Modal';
 
+import { motion } from 'framer-motion';
+
 import './App.css'
+
+const animationsXm = {
+  hidden: {
+    opacity: 0,
+    x: "-100px"
+  },
+  show: {
+    opacity: 1,
+    x: "0px",
+    transition: {
+      delay: 0.5,
+      duration: 1,
+      ease: "easeInOut",
+  }
+  }
+}
+const animationsXp = {
+  hidden: {
+    opacity: 0,
+    x: "100px"
+  },
+  show: {
+    opacity: 1,
+    x: "0px",
+    transition: {
+      delay: 1,
+      duration: 1,
+      ease: "easeInOut",
+  }
+  }
+}
 
 function App() {
   const[result, setResult]=useState({
@@ -21,13 +54,24 @@ function App() {
   return (
 <>
       <div className=" container mx-auto">
-        <div className="">
+        <div className=""
+        >
           <div className="grid grid-cols-5 gap-1 h-90 mx-5">
-            <div className="col-span-5 mx-5 my-10">
+            <div 
+              className="col-span-5 mx-5 my-10"
+              initial='hidden'
+              animate='show'
+              variants={animationsXm}
+            >
               <h1 className='text-center text-5xl text-white'> FFMI Calculator</h1>
               <p className='text-center text-white'>Determine your fat free mass index</p>
             </div>
-            <div className="box1 col-span-5 md:col-span-2 rounded-lg ">
+            <div 
+              className="box1 col-span-5 md:col-span-2 rounded-lg"
+              initial='hidden'
+              animate='show'
+              variants={animationsXp}
+            >
               <div className=" w-full h-full">
                 <Info 
                   result={result}
@@ -36,7 +80,12 @@ function App() {
                 />
               </div>
             </div>
-            <div className="  box2 col-span-5 md:col-span-3 rounded-lg ">
+            <div 
+              className="  box2 col-span-5 md:col-span-3 rounded-lg"
+              initial='hidden'
+              animate='show'
+              variants={animationsXm}
+            >
               <div className="p-1 flex justify-center items-center h-full rounded border-green-700">
                 <Calculation 
                   metricImperial={metricImperial}
