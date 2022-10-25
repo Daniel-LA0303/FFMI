@@ -5,38 +5,6 @@ import Modal from './components/modal/Modal';
 
 import { motion } from 'framer-motion';
 
-import './App.css'
-
-const animationsXm = {
-  hidden: {
-    opacity: 0,
-    x: "-100px"
-  },
-  show: {
-    opacity: 1,
-    x: "0px",
-    transition: {
-      delay: 0.5,
-      duration: 1,
-      ease: "easeInOut",
-  }
-  }
-}
-const animationsXp = {
-  hidden: {
-    opacity: 0,
-    x: "100px"
-  },
-  show: {
-    opacity: 1,
-    x: "0px",
-    transition: {
-      delay: 1,
-      duration: 1,
-      ease: "easeInOut",
-  }
-  }
-}
 
 function App() {
   const[result, setResult]=useState({
@@ -56,21 +24,21 @@ function App() {
       <div className=" container mx-auto">
         <div className=""
         >
-          <div className="grid grid-cols-5 gap-1 h-90 mx-5">
+          <motion.div 
+            className="grid grid-cols-5 gap-1 h-90 mx-5"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 2 }}
+          >
             <div 
               className="col-span-5 mx-5 my-10"
-              initial='hidden'
-              animate='show'
-              variants={animationsXm}
             >
               <h1 className='text-center text-5xl text-white'> FFMI Calculator</h1>
               <p className='text-center text-white'>Determine your fat free mass index</p>
             </div>
             <div 
               className="box1 col-span-5 md:col-span-2 rounded-lg"
-              initial='hidden'
-              animate='show'
-              variants={animationsXp}
+              
             >
               <div className=" w-full h-full">
                 <Info 
@@ -82,9 +50,6 @@ function App() {
             </div>
             <div 
               className="  box2 col-span-5 md:col-span-3 rounded-lg"
-              initial='hidden'
-              animate='show'
-              variants={animationsXm}
             >
               <div className="p-1 flex justify-center items-center h-full rounded border-green-700">
                 <Calculation 
@@ -137,7 +102,7 @@ function App() {
                     />
                 </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <Modal 
