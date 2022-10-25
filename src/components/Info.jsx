@@ -1,14 +1,18 @@
-import React, {useEffect} from 'react'
+import React, {useEffect} from 'react';
+import { CircularProgressbar, buildStyles} from 'react-circular-progressbar';
+import "react-circular-progressbar/dist/styles.css";
 
 const Info = ({
     result, 
     metricImperial, 
     setMetricImperial
 }) => {
+
+    const { fatFreeMass, bodyFat, ffmi, NormalizedFFmi} =result;
   return (
     <div className='w-full'>
     <div className='mx-auto py-4 w-64 sm:w-60 md:w-56 lg:w-64 xl:w-80  '>
-        {/* <CircularProgressbar 
+        <CircularProgressbar 
             styles={buildStyles({
                 pathColor: '#96c93d',
                 trailColor: '#f5f5f5',
@@ -21,7 +25,7 @@ const Info = ({
             maxValue={80}
             value={ffmi}
             text={ffmi}
-        /> */}
+        />
     </div>
     <div className='mx-8 my-4 sm:mx-4 md:mx-10 text-white'>
         <div className=' flex justify-between mb-1'>
