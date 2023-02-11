@@ -38,6 +38,7 @@ const Modal = ({show, close}) => {
                                     <h1 className='text-center text-2xl font-bold my-3'>FFMI interpretation</h1>
                                     <p className='mb-4'>The calculated normalized ffmi can be interpreted using the tables below. You also need to consider that the interpretation for men and women will be different, so there are 2 tables.
                                     </p>
+                                    <p className=' text-center'>This design is inspired by the next page: <span className=' font-bold'><a href="https://ffmicalculator.org/" target="_blank">FFMI Calculator</a></span></p>
                                 </div>
                             </main>
                             <footer className="modal_footer">

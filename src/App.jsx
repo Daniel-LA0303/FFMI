@@ -31,7 +31,7 @@ function App() {
             transition={{ duration: 2 }}
           >
             <div 
-              className="col-span-5 mx-5 my-10"
+              className="col-span-5 mx-5 my-5"
             >
               <h1 className='text-center text-5xl text-white'> FFMI Calculator</h1>
               <p className='text-center text-white'>Determine your fat free mass index</p>
@@ -93,7 +93,7 @@ function App() {
             </div>
 
             <div className=" col-span-5">
-              <div className="flex items-center justify-center my-7">
+              <div className="flex items-center justify-center my-5">
                     <input 
                         className="btn w-60 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block cursor-pointer" 
                         type="submit"
@@ -102,6 +102,10 @@ function App() {
                     />
                 </div>
             </div>
+            <div className='col-span-5'>
+              <h1 className=' text-center text-white text-3xl'>Code-LA</h1>
+            </div>
+            
           </motion.div>
         </div>
       </div>
